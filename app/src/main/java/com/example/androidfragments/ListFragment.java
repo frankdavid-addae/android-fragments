@@ -36,12 +36,14 @@ public class ListFragment extends androidx.fragment.app.ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ArrayList<String> data = new ArrayList<>();
-        data.add("1. This is item 1");
-        data.add("2. This is item 2");
-        data.add("3. This is item 3");
-
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, data));
+//        ArrayList<String> data = new ArrayList<>();
+//        data.add("1. This is item 1");
+//        data.add("2. This is item 2");
+//        data.add("3. This is item 3");
+        String [] pieces;
+        pieces = getResources().getStringArray(R.array.pieces);
+//        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, data));
+        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, pieces));
     }
 
     @Override

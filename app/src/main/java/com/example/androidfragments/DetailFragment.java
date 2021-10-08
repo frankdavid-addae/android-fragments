@@ -16,7 +16,8 @@ import java.util.ArrayList;
 public class DetailFragment extends Fragment {
 
     TextView tvDescription;
-    ArrayList<String> descriptions;
+//    ArrayList<String> descriptions;
+    String [] descriptions;
 
     int index;
 
@@ -46,14 +47,16 @@ public class DetailFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         tvDescription = view.findViewById(R.id.tvDescription);
 
-        descriptions = new ArrayList<>();
-        descriptions.add("Description for item 1");
-        descriptions.add("Description for item 2");
-        descriptions.add("Description for item 3");
+//        descriptions = new ArrayList<>();
+//        descriptions.add("Description for item 1");
+//        descriptions.add("Description for item 2");
+//        descriptions.add("Description for item 3");
+        descriptions = getResources().getStringArray(R.array.descriptions);
 
         if (getArguments() != null) {
             index = getArguments().getInt(INDEX);
         }
-        tvDescription.setText(descriptions.get(index));
+//        tvDescription.setText(descriptions.get(index));
+        tvDescription.setText(descriptions[index]);
     }
 }
